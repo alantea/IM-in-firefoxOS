@@ -1,0 +1,18 @@
+{
+  "version": "0.1",
+  "name": "UI",
+  "description": "Awesome todo app by iFadey",
+  "launch_path": "/index.html",
+  "icons": {
+    "16": "/tmpicon.png",
+    "48": "/tmpicon.png",
+    "128": "/tmpicon.png"
+  },
+  "developer": {
+    "name": "Fawad Hassan",
+    "url": "http://ifadey.com"
+  },
+  "installs_allowed_from": ["*"],
+  "appcache_path": "/cache.manifest",
+  "default_locale": "en"
+}

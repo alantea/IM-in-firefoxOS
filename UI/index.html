@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="stylesheet" href="./style/buttons.css">
+		<link rel="stylesheet" href="./style/input_areas.css">
+		<link rel="stylesheet" href="./style/action_menu.css">
+		<link rel="stylesheet" href="./style/confirm.css">
+		<link rel="stylesheet" href="./style/custom.css">
+		<link rel="stylesheet" href="./style/edit_mode.css">
+		<link rel="stylesheet" href="./style/headers.css">
+		<link rel="stylesheet" href="./style/responsive.css">
+		<link rel="stylesheet" href="./style/status.css">
+		<link rel="stylesheet" href="./style/switches.css">
+		<link rel="stylesheet" href="./style.css">
+		<link rel="stylesheet" href="./slide_side/pageslide.css">
+		<script src="./slide_side/pageslide.js"></script>
+		<script src="./slide_side/pageslide.min.js"></script>
+		<script src="./jquery-1.10.2.min.js"></script>
+		<script src="./js/main.js"></script>
+		<script src="./js/talk.js"></script>
+		<script src="./js/strophe.js"></script>
+		<script src="./js/register.js"></script>
+		<script src="./js/login.js"></script>
+		<script src="./js/strophe_register.js"></script>
+	</head>
+	<body>
+		<section role="region" id="loginpage" aria-hidden="false">
+			<header>
+				<a href="#"><span class="icon icon-user">user</span></a>
+				<menu type="toolbar">
+      				<a href="#"><span class="icon icon-close">close</span></a>
+      			</menu>
+				<h1>Welcome TO FIM</h1>
+			</header>
+			<h1>app interview</h1>
+			<form>
+				<fieldset>
+				<p>
+					<label for="login_name">username</label>
+					<input type="text" placeholder="Username" id="login_name" required>
+        			<button type="reset">Clear</button>
+				</p>
+				<p>
+					<label for="login_pwd">password</label>
+					<input type="text" placeholder="Password" id="login_pwd" required>
+					<button type="reset">Clear</button>
+				</p>
+				<p class="bb-docs">
+					<button type='button' id="login">log in</button>
+					<button type="button" id="unregister">register now</button>
+				</p>
+				</fieldset>
+			</form>
+		</section>
+
+		<section role="region" id="registerpage" aria-hidden="true">
+			<header>
+				<a href="#"><span class="icon icon-back" id="register_back">back</span></a> <!--here-->
+				<h1>Register</h1>
+			</header>
+			<h1>app interview</h1>
+			<form>
+				<fieldset>
+				<p>
+					<label for="reg_name">username</label>
+					<input type="text" placeholder="Username" name="reg_name" id="account" required>
+        			<button type="reset">Clear</button>
+				</p>
+				<p>
+					<label for="reg_pwd">password</label>
+					<input type="text" placeholder="Password" name="reg_pwd" id="psw1" required>
+					<button type="reset">Clear</button>
+				</p>
+				<p>
+					<label for="confirm_pwd">confirm password</label>
+					<input type="text" placeholder="Password" name="confirm_pwd" id="psw2" required>
+					<button type="reset">Clear</button>
+				</p>
+				<p class="bb-docs">
+					<button type="button" id="register">register</button>
+				</p>
+				</fieldset>
+			</form>
+			<div id="reg_now"></div>
+		</section>
+
+		<section role="region" id="friendpage" aria-hidden="true">
+			<header>
+				<a href="#"><span class="icon icon-back" id="friend_back">back</span></a>
+				<menu type="toolbar">
+      				<a href="#"><span class="icon icon-add" id="addfriend">add</span></a>
+      			</menu>
+      			<h1>Friend</h1>
+			</header>
+			<h1>app interview</h1>
+			<form role="search" id="usersearch">
+    			<p>
+    				<input type="text" placeholder="Search..." required>
+        			<button type="reset">Clear</button>
+   				</p>
+    		</form>
+			<div id="friendlist">
+				<div class="friend" id="Peter"> <!-- div  VS.  dl -->
+					<img src="temp_logo.jpg"/><span>Peter</span><span></span>
+				</div>
+				<div class="friend" id="john">
+					<img src="temp_logo.jpg"/><span>jonn</span><span></span>
+				</div>
+			</div>
+		</section>
+
+		<section role="region" class="chat" id="chatpage" aria-hidden="true">
+			<header>
+				<a href="#"><span class="icon icon-back" id="chat_back">back</span></a>
+				<h1>Friend's name</h1>
+			</header>
+			<article id="chatcontact">
+				<div class="chat">
+					Idiot iceman1216: Hello~~~
+				</div>
+				<div class="chat">
+					Wise Veronica: YOYO~~~~~
+				</div>
+				<div class="pic">
+					<img src="temp_logo.jpg">
+				</div>
+			</article>
+			<footer>
+ 				<form role="search" class="bottom">
+      				<button type="button" class="icon icon-attachment">Attachment</button>
+      				<div id="image-presenter"></div>
+      				<button type="button" id="send">Send</button>
+      				<p>
+        				<textarea placeholder="Message" id="chatting" name="userchat" ></textarea>
+      				</p>
+    			</form>
+			</footer>
+		</section>
+
+		<section role="region" id="mainpage" aria-hidden="true">
+			<header>
+				<a href="#"><span class="icon icon-user">user</span></a>
+				<menu type="toolbar">
+      				<a href="#"><span class="icon icon-close">close</span></a>
+      			</menu>
+				<h1>Main Page</h1>
+			</header>
+				<div id="main">
+					<div class="row">
+						<div id="friend_link">friends</div>
+						<div id="setting_link">setting</div>
+						<div id="chat_link">chat</div>
+					</div>
+					<div class="row">
+						<div>4</div>
+						<div>5</div>
+						<div>6</div>
+					</div>
+					<div class="row">
+						<div>7</div>
+						<div>8</div>
+						<div>9</div>
+					</div>
+				</div>
+		</section>
+
+	</body>
+</html>
