@@ -57,6 +57,15 @@ $(document).ready(function(){
       $('#friendpage').addClass('slide-up-in');*/
 	});
 
+  $('#chat_link').click(function(){
+    $('#mainpage').attr('aria-hidden', 'true');
+      $('#chatpage').attr('aria-hidden', 'false');
+     /* $('#friendpage').removeClass('slide-down-out');
+      $('#mainpage').removeClass('slide-up-in');
+      $('#mainpage').addClass('slide-down-out');
+      $('#friendpage').addClass('slide-up-in');*/
+  });
+
 	$('#addfriend').click(function(){
 		$('#friendpage').attr('aria-hidden', 'true');
 		$('#addpage').attr('aria-hidden', 'false');
