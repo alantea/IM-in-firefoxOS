@@ -125,7 +125,7 @@ $(document).ready(function(){
 		alert('Invitation has been sent.');
 	});
 
-	/*$('form[name="approve_dialog"]').on("click", "#approve", function() {
+	$('#approve').click(function() {
 		$('form[name="approve_dialog"]').addClass("hidden");
 		Main.connection.send($pres({to: Main.pending_subscriber, "type": "subscribed"}));
         Main.connection.send($pres({to: Main.pending_subscriber, "type": "subscribe"}));
@@ -142,7 +142,7 @@ $(document).ready(function(){
 		Main.connection.send($pres({to: Main.pending_subscriber, "type": "unsubscribed"}));
         Main.pending_subscriber = null;
 		$('form[name="approve_dialog"]').addClass("hidden");
-	});*/
+	});
 	/*$('#send').click(function(){
 		text = $("textarea[name='userchat']").val();
 		$("#chatcontact").append("<div class=\"chat\">" + text + "</div>");

@@ -30,13 +30,13 @@ var Login = {
 			//$('#connect').get(0).value = 'connect';
 		}
 		else if (status == Strophe.Status.CONNECTED) {
-			$('#friendpage').attr('aria-hidden', 'false');
-   			$('#loginpage').attr('aria-hidden', 'true');
 			Main.connection = Login.connection;
 			Main.jid = $('#login_name').get(0).value + '@ccs.cs.ccu.edu.tw';
 			Main.connection.send($pres().tree());
-			
 			Roster.start();
+			Main.connection.addHandler(Roster.onPresence, null, "presence");
+			$('#friendpage').attr('aria-hidden', 'false');
+   			$('#loginpage').attr('aria-hidden', 'true');
 		}
 	}
 };
