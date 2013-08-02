@@ -29,7 +29,7 @@
         <script src="./js/strophe_roster.js"></script>
 	</head>
 	<body>
-		<section role="region" id="loginpage" aria-hidden="false">
+		<section role="region" id="loginpage" aria-hidden="true">
 			<header>
 				<a href="#"><span class="icon icon-user">user</span></a>
 				<menu type="toolbar">
@@ -63,7 +63,7 @@
 				<a href="#"><span class="icon icon-back" id="register_back">back</span></a> <!--here-->
 				<h1>Register</h1>
 			</header>
-			<h1>app interview</h1>
+			<h1>app introduction</h1>
 			<form>
 				<fieldset>
 				<p>
@@ -89,7 +89,7 @@
 			<div id="reg_now"></div>
 		</section>
 
-		<section role="region" id="friendpage" aria-hidden="true">
+		<section role="region" id="friendpage" aria-hidden="false">
 			<header>
 				<a href="#"><span class="icon icon-back" id="friend_back">back</span></a>
 				<menu type="toolbar">
@@ -97,7 +97,7 @@
       			</menu>
       			<h1>Friend</h1>
 			</header>
-			<h1>app interview</h1>
+			<h1>app introduce</h1>
 			<form role="search" id="usersearch">
     			<p>
     				<input type="text" placeholder="Search..." required>
@@ -132,6 +132,25 @@
       			</li>
     		</ul>
     		</footer>
+ 		</section>
+
+ 		<section role="region" id="addpage" aria-hidden="true">
+ 			<header>
+				<a href="#"><span class="icon icon-back" id="add_back">back</span></a>
+      			<h1>[+] Add Friend</h1>
+			</header>
+			<form>
+				<fieldset>
+				<p>
+					<label for="login_name">Friend's account</label>
+					<input type="text" placeholder="Username" id="add_name" required>
+        			<button type="reset">Clear</button>
+				</p>
+				<p class="bb-docs">
+					<button type='button' id="add">add</button>
+				</p>
+				</fieldset>
+			</form>
  		</section>
 
 		<section role="region" class="chat" id="chatpage" aria-hidden="true">

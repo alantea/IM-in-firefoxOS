@@ -49,6 +49,11 @@ $(document).ready(function(){
 		$('#mainpage').addClass('slide-up-in');*/
   });
 
+    $('#add_back').click(function(){
+      $('#addpage').attr('aria-hidden', 'true');
+    $('#friendpage').attr('aria-hidden', 'false');
+  });
+
 
 	$('#friend_link').click(function(){
 		$('#mainpage').attr('aria-hidden', 'true');

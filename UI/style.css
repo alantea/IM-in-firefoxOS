@@ -38,6 +38,11 @@ section[role="region"] .friend{
   border-radius: 0.4rem;
 }
 
+#addpage form {
+  margin-top: 2rem;
+  padding-top: 10rem;
+}
+
 /*section[role="region"] .friend img{
   width: 30%;
   height: 30%;
