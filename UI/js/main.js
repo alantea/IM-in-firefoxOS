@@ -4,7 +4,7 @@ var Main = {
 	connection: null,
 	talk_to: null,
 	jid: null,
-  pending_subscriber: null
+	pending_subscriber: null
 };
 
 
