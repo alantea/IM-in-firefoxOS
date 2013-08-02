@@ -116,7 +116,7 @@ $(document).ready(function(){
 
 	$('#add').click(function() {
 
-		var jid = $('#add_name').val();
+		var jid = $('#add_name').val() + '@ccs.cs.ccu.edu.tw';
 		var iq = $iq({type: "set"}).c("query", {xmlns: "jabber:iq:roster"}).c("item", jid);
     	Main.connection.sendIQ(iq);
     
@@ -125,7 +125,7 @@ $(document).ready(function(){
 		alert('Invitation has been sent.');
 	});
 
-	$('#approve').click(function() {
+	/*$('form[name="approve_dialog"]').on("click", "#approve", function() {
 		$('form[name="approve_dialog"]').addClass("hidden");
 		Main.connection.send($pres({to: Main.pending_subscriber, "type": "subscribed"}));
         Main.connection.send($pres({to: Main.pending_subscriber, "type": "subscribe"}));
@@ -142,7 +142,7 @@ $(document).ready(function(){
 		Main.connection.send($pres({to: Main.pending_subscriber, "type": "unsubscribed"}));
         Main.pending_subscriber = null;
 		$('form[name="approve_dialog"]').addClass("hidden");
-	});
+	});*/
 	/*$('#send').click(function(){
 		text = $("textarea[name='userchat']").val();
 		$("#chatcontact").append("<div class=\"chat\">" + text + "</div>");

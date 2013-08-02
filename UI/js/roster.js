@@ -1,5 +1,6 @@
 var Roster = {
 	start: function() {
+		Main.connection.addHandler(Roster.onPresence, null, "presence");
 		Main.connection.roster.init(Main.connection);			// 初始化 roster 連線
 		Main.connection.roster.get(Roster.getContact); 			// 取得 roster
 		$('#friendlist ul').empty();

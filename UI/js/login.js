@@ -3,9 +3,7 @@ var Login = {
 
 	start: function() {
 		Login.connection = new Strophe.Connection(Main.BOSH_SERVICE);
-		var name = $('#login_name').get(0).value + '@ccs.cs.ccu.edu.tw';
-		var pwd = $('#login_pwd').get(0).value;
-		Login.connection.connect(name, pwd, Login.onConnect);
+		Login.connection.connect($('#login_name').get(0).value + '@ccs.cs.ccu.edu.tw', $('#login_pwd').get(0).value, Login.onConnect);
 	},
 
 	log: function (msg) {
@@ -32,13 +30,13 @@ var Login = {
 			//$('#connect').get(0).value = 'connect';
 		}
 		else if (status == Strophe.Status.CONNECTED) {
-			Main.connection = Login.connection;
-			Main.jid = $('#login_name').get(0).value;
-			Main.connection.send($pres().tree());
-			Roster.start();
-			Main.connection.addHandler(Roster.onPresence, null, "presence");
 			$('#friendpage').attr('aria-hidden', 'false');
    			$('#loginpage').attr('aria-hidden', 'true');
+			Main.connection = Login.connection;
+			Main.jid = $('#login_name').get(0).value + '@ccs.cs.ccu.edu.tw';
+			Main.connection.send($pres().tree());
+			
+			Roster.start();
 		}
 	}
 };
