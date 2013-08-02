@@ -3,7 +3,7 @@ var Main = {
 	BOSH_SERVICE: 'http://ccs.cs.ccu.edu.tw:5280/http-bind',
 	connection: null,
 	talk_to: null,
-	jid: null,
+	jid: null
 };
 
 
@@ -30,23 +30,22 @@ $(document).ready(function(){
    		$('#loginpage').addClass('slide-up-in');*/
 	});
 
-  $('#chat_back').click(function(){
-    $('#chatpage').attr('aria-hidden', 'true');
-      $('#friendpage').attr('aria-hidden', 'false');
+	$('#chat_back').click(function(){
+    	$('#chatpage').attr('aria-hidden', 'true');
+		$('#friendpage').attr('aria-hidden', 'false');
       /*$('#friendpage').removeClass('slide-down-out');
       $('#chatpage').removeClass('slide-up-in');
       $('#chatpage').addClass('slide-down-out');
       $('#friendpage').addClass('slide-up-in');*/
   });
 
-  $('#friend_back').click(function(){
+	$('#friend_back').click(function(){
 		$('#friendpage').attr('aria-hidden', 'true');
 		$('#mainpage').attr('aria-hidden', 'false');
-
      /* $('#mainpage').removeClass('slide-down-out');
-      $('#friendpage').removeClass('slide-up-in');
-      $('#friendpage').addClass('slide-down-out');
-      $('#mainpage').addClass('slide-up-in');*/
+		$('#friendpage').removeClass('slide-up-in');
+		$('#friendpage').addClass('slide-down-out');
+		$('#mainpage').addClass('slide-up-in');*/
   });
 
 
@@ -59,9 +58,9 @@ $(document).ready(function(){
       $('#friendpage').addClass('slide-up-in');*/
 	});
 
-	$('#friend_link').one("click", function(){
+	/*$('#friend_link').one("click", function(){
 		Roster.start(); 		// 讀取好友列表
-	});
+	});*/
 
   $('#chat_link').click(function(){
     $('#mainpage').attr('aria-hidden', 'true');
@@ -97,6 +96,17 @@ $(document).ready(function(){
 		$('#chatpage').attr('aria-hidden', 'false');
 		$('#friendpage').attr('aria-hidden', 'true');
 	});
+	
+	$('#go_friend').click(function(){
+		$(this).closest('section').attr('aria-hidden', 'true');
+		$('#friendpage').attr('aria-hidden', 'false');
+	});
+
+	$('#go_menu').click(function(){
+    	$(this).closest('section').attr('aria-hidden', 'true');
+    	$('#mainpage').attr('aria-hidden', 'false');
+  	});
+
 	/*$('#send').click(function(){
 		text = $("textarea[name='userchat']").val();
 		$("#chatcontact").append("<div class=\"chat\">" + text + "</div>");

@@ -12,23 +12,20 @@
 		<link rel="stylesheet" href="./style/status.css">
 		<link rel="stylesheet" href="./style/switches.css">
 		<link rel="stylesheet" href="./style_unstable/progress_activity.css">
+		<link rel="stylesheet" href="./style_unstable/tabs.css">
 		<link rel="stylesheet" href="./style.css">
 		<link rel="stylesheet" href="./slide_side/pageslide.css">
 		<script src="./slide_side/pageslide.js"></script>
 		<script src="./slide_side/pageslide.min.js"></script>
 		<script src="./jquery-1.10.2.min.js"></script>
-
-		<script src="./js/strophe.js"></script>
-		<script src="./js/strophe_roster.js"></script>
-		<script src="./js/strophe_register.js"></script>
-
 		<script src="./js/main.js"></script>
-		<!-- <script src="./js/talk.js"></script> -->
+		<script src="./js/chat.js"></script>
+		<script src="./js/strophe.js"></script>
 		<script src="./js/register.js"></script>
 		<script src="./js/login.js"></script>
-		<script src="./js/roster.js"></script>
-		<script src="./js/chat.js"></script>
-		
+        <script src="./js/roster.js"></script>
+		<script src="./js/strophe_register.js"></script>
+        <script src="./js/strophe_roster.js"></script>
 	</head>
 	<body>
 		<section role="region" id="loginpage" aria-hidden="false">
@@ -106,19 +103,35 @@
         			<button type="reset">Clear</button>
    				</p>
     		</form>
-    		<!-- 聯絡人列表 -->
-			<div id='contactlist'>
-				<ul></ul>
-			</div>
+            <div id='contactlist'>
+                <ul></ul>
+            </div>
 			<!-- <div id="friendlist">
-				<div class="friend" id="Peter">  div  VS.  dl
+				<div class="friend" id="Peter">
 					<img src="temp_logo.jpg"/><span>Peter</span><span></span>
 				</div>
 				<div class="friend" id="john">
 					<img src="temp_logo.jpg"/><span>jonn</span><span></span>
 				</div>
 			</div> -->
-		</section>
+			<footer>
+  			<!-- if your tabs are at the top, remove class="bottom" -->
+		    <ul role="tablist" data-items="3" class="bottom">
+    			<li id="panel1" role="tab">
+    				<a href="#panel1" class="icon">comms</a>
+        			<div role="tabpanel"></div>
+    			</li>
+    			<li id="panel2" role="tab">
+        			<a href="#panel2" class="icon" id="go_friend">contacts</a>
+        			<div role="tabpanel"></div>
+      			</li>
+      			<li id="panel3" role="tab">
+        			<a class="icon" id="go_menu">dialer</a>
+        			<div role="tabpanel"></div>
+      			</li>
+    		</ul>
+    		</footer>
+ 		</section>
 
 		<section role="region" class="chat" id="chatpage" aria-hidden="true">
 			<header>
@@ -126,15 +139,6 @@
 				<h1>Friend's name</h1>
 			</header>
 			<article id="chatcontact">
-				<!-- <div class="chat">
-					Idiot iceman1216: Hello~~~
-				</div>
-				<div class="chat">
-					Wise Veronica: YOYO~~~~~
-				</div>
-				<div class="pic">
-					<img src="temp_logo.jpg">
-				</div> -->
 			</article>
 			<footer>
  				<form role="search" class="bottom">
@@ -154,7 +158,7 @@
 				<menu type="toolbar">
       				<a href="#"><span class="icon icon-close">close</span></a>
       			</menu>
-				<h1>Main Page</h1>
+				<h1>Other</h1>
 			</header>
 				<div id="main">
 					<div class="row">
@@ -173,7 +177,6 @@
 						<div>9</div>
 					</div>
 				</div>
-		</section>
 
 	</body>
 </html>

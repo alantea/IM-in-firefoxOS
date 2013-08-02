@@ -15,7 +15,6 @@ var Login = {
 			//log('Strophe is connecting.');
 		}
 		else if (status == Strophe.Status.CONNFAIL) {
-			alert('Connect to server failed.');
 			//Login.log('Strophe failed to connect.');
 			//$('#connect').get(0).value = 'connect';
 		}
@@ -34,7 +33,8 @@ var Login = {
 			Main.connection = Login.connection;
 			Main.jid = $('#login_name').get(0).value;
 			Main.connection.send($pres().tree());
-			$('#mainpage').attr('aria-hidden', 'false');
+			Roster.start();
+			$('#friendpage').attr('aria-hidden', 'false');
    			$('#loginpage').attr('aria-hidden', 'true');
 		}
 	}
