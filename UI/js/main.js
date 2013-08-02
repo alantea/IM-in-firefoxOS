@@ -2,11 +2,12 @@
 var Main = {
 	BOSH_SERVICE: 'http://ccs.cs.ccu.edu.tw:5280/http-bind',
 	connection: null,
+	talk_to: null,
+	jid: null,
 };
 
 
 $(document).ready(function(){
-	Talk.start();
   /* 前往註冊的按鈕*/
 	$('#unregister').click(function(){
 		  $('#registerpage').attr('aria-hidden', 'false');
@@ -39,8 +40,9 @@ $(document).ready(function(){
   });
 
   $('#friend_back').click(function(){
-    $('#friendpage').attr('aria-hidden', 'true');
-      $('#mainpage').attr('aria-hidden', 'false');
+		$('#friendpage').attr('aria-hidden', 'true');
+		$('#mainpage').attr('aria-hidden', 'false');
+
      /* $('#mainpage').removeClass('slide-down-out');
       $('#friendpage').removeClass('slide-up-in');
       $('#friendpage').addClass('slide-down-out');
@@ -50,11 +52,15 @@ $(document).ready(function(){
 
 	$('#friend_link').click(function(){
 		$('#mainpage').attr('aria-hidden', 'true');
-      $('#friendpage').attr('aria-hidden', 'false');
+		$('#friendpage').attr('aria-hidden', 'false');
      /* $('#friendpage').removeClass('slide-down-out');
       $('#mainpage').removeClass('slide-up-in');
       $('#mainpage').addClass('slide-down-out');
       $('#friendpage').addClass('slide-up-in');*/
+	});
+
+	$('#friend_link').one("click", function(){
+		Roster.start(); 		// 讀取好友列表
 	});
 
   $('#chat_link').click(function(){
@@ -73,11 +79,6 @@ $(document).ready(function(){
 		$('#addpage').addClass('slide-up-in');*/
 	});
 
-  $('.friend').click(function(){
-    $('#friendpage').attr('aria-hidden', 'true');
-    $('#chatpage').attr('aria-hidden', 'false');
-  });
-
 
 	$('#register').click(function() {
 		Register.start();
@@ -86,6 +87,15 @@ $(document).ready(function(){
 
 	$('#login').click(function() {
 		Login.start();
+	});
+
+	$('#contactlist').on("click", ".roster-jid", function() {
+		//alert('haha');
+		Main.talk_to = $(this).text();
+		Chat.start();	
+		$('#chatpage header h1').text(Main.talk_to);
+		$('#chatpage').attr('aria-hidden', 'false');
+		$('#friendpage').attr('aria-hidden', 'true');
 	});
 	/*$('#send').click(function(){
 		text = $("textarea[name='userchat']").val();

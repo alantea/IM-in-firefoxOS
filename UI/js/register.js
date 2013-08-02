@@ -31,6 +31,8 @@ var Register = {
             alert("Registered successfully. Please LOGIN.")
             $('#registerpage').attr('aria-hidden', 'true');
             $('#loginpage').attr('aria-hidden', 'false');
+
+
         }
         else if (status === Strophe.Status.CONNECTED) {
             //Register.log("logged in!");

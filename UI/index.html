@@ -17,12 +17,18 @@
 		<script src="./slide_side/pageslide.js"></script>
 		<script src="./slide_side/pageslide.min.js"></script>
 		<script src="./jquery-1.10.2.min.js"></script>
-		<script src="./js/main.js"></script>
-		<script src="./js/talk.js"></script>
+
 		<script src="./js/strophe.js"></script>
+		<script src="./js/strophe_roster.js"></script>
+		<script src="./js/strophe_register.js"></script>
+
+		<script src="./js/main.js"></script>
+		<!-- <script src="./js/talk.js"></script> -->
 		<script src="./js/register.js"></script>
 		<script src="./js/login.js"></script>
-		<script src="./js/strophe_register.js"></script>
+		<script src="./js/roster.js"></script>
+		<script src="./js/chat.js"></script>
+		
 	</head>
 	<body>
 		<section role="region" id="loginpage" aria-hidden="false">
@@ -100,14 +106,18 @@
         			<button type="reset">Clear</button>
    				</p>
     		</form>
-			<div id="friendlist">
-				<div class="friend" id="Peter"> <!-- div  VS.  dl -->
+    		<!-- 聯絡人列表 -->
+			<div id='contactlist'>
+				<ul></ul>
+			</div>
+			<!-- <div id="friendlist">
+				<div class="friend" id="Peter">  div  VS.  dl
 					<img src="temp_logo.jpg"/><span>Peter</span><span></span>
 				</div>
 				<div class="friend" id="john">
 					<img src="temp_logo.jpg"/><span>jonn</span><span></span>
 				</div>
-			</div>
+			</div> -->
 		</section>
 
 		<section role="region" class="chat" id="chatpage" aria-hidden="true">
@@ -116,7 +126,7 @@
 				<h1>Friend's name</h1>
 			</header>
 			<article id="chatcontact">
-				<div class="chat">
+				<!-- <div class="chat">
 					Idiot iceman1216: Hello~~~
 				</div>
 				<div class="chat">
@@ -124,7 +134,7 @@
 				</div>
 				<div class="pic">
 					<img src="temp_logo.jpg">
-				</div>
+				</div> -->
 			</article>
 			<footer>
  				<form role="search" class="bottom">

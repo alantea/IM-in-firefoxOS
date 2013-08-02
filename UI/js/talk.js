@@ -1,7 +1,4 @@
 var Talk = {
-	connection: null,
-
-	to_link: 'test@ccs.cs.ccu.edu.tw',
 
 	start: function () {
 		Talk.connection = new Strophe.Connection(Main.BOSH_SERVICE);
