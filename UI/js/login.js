@@ -3,7 +3,9 @@ var Login = {
 
 	start: function() {
 		Login.connection = new Strophe.Connection(Main.BOSH_SERVICE);
-		Login.connection.connect($('#login_name').get(0).value, $('#login_pwd').get(0).value, Login.onConnect);
+		var name = $('#login_name').get(0).value + '@ccs.cs.ccu.edu.tw';
+		var pwd = $('#login_pwd').get(0).value;
+		Login.connection.connect(name, pwd, Login.onConnect);
 	},
 
 	log: function (msg) {
