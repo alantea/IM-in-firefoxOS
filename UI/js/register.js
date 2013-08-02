@@ -13,9 +13,9 @@ var Register = {
     },
 
     /* 顯示 log */
-    log: function(msg) {
+    /*log: function(msg) {
         $('#reg_now').append('<div></div>').append(document.createTextNode(msg));
-    },
+    },*/
 
     /* 註冊狀態 */
     onReg: function(status) {
@@ -23,19 +23,24 @@ var Register = {
             Register.connection.register.fields.username = $('#account').get(0).value;
             Register.connection.register.fields.password = $('#psw1').get(0).value;
             Register.connection.register.submit();
-            Register.log('registering...');
+            //Register.log('registering...');
         }
         else if (status === Strophe.Status.REGISTERED) {
-            Register.log("registered!");
-            Register.connection.register.authenticate();
+            //Register.log("registered!");
+            //Register.connection.register.authenticate();
+            alert("Registered successfully. Please LOGIN.")
+            $('#registerpage').attr('aria-hidden', 'true');
+            $('#loginpage').attr('aria-hidden', 'false');
         }
         else if (status === Strophe.Status.CONNECTED) {
-            Register.log("logged in!");
+            //Register.log("logged in!");
         }
         else if (status === Strophe.Status.SBMTFAIL) {
-            Register.log("submit failed!");
+            //Register.log("submit failed!");
+            alert("submit failed!")
              if (connection.register.registered == true)            // strophe_register.js 裡面提供的變數，用來判斷是否註冊過
-                Register.log("account already exists");
+                //Register.log("account already exists");
+                alert("account already exists")
             //connection.send($pres().tree());
         }
     }

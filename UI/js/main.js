@@ -73,6 +73,11 @@ $(document).ready(function(){
 		$('#addpage').addClass('slide-up-in');*/
 	});
 
+  $('.friend').click(function(){
+    $('#friendpage').attr('aria-hidden', 'true');
+    $('#chatpage').attr('aria-hidden', 'false');
+  });
+
 
 	$('#register').click(function() {
 		Register.start();

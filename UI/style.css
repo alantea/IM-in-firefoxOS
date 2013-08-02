@@ -1,5 +1,6 @@
 html, body { height: 100%; }
 
+
 section[role="region"] #friendlist{
   padding: 1rem;
   margin-top: 0rem; 
@@ -121,8 +122,13 @@ border-style: outset;
 
 /* search style */
 section[role="region"] #usersearch {
-  border-radius: 2rem;
+  /*border-radius: 2rem;*/
   margin-bottom: 0rem;
+}
+
+form[role="search"] p input + button[type="reset"]{
+  top: 0;
+  margin: 0rem; 
 }
 
 /*animator*/
