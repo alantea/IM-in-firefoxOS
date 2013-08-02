@@ -3,7 +3,8 @@ var Main = {
 	BOSH_SERVICE: 'http://ccs.cs.ccu.edu.tw:5280/http-bind',
 	connection: null,
 	talk_to: null,
-	jid: null
+	jid: null,
+  pending_subscriber: null
 };
 
 
@@ -107,6 +108,26 @@ $(document).ready(function(){
     	$('#mainpage').attr('aria-hidden', 'false');
   	});
 
+  $('#approve_dialog').dialog({
+        autoOpen: false,
+        draggable: false,
+        modal: true,
+        title: 'Subscription Request',
+        buttons: {
+            "Deny": function () {
+                Main.connection.send($pres({to: Main.pending_subscriber, "type": "unsubscribed"}));
+                Main.pending_subscriber = null;
+                $(this).dialog('close');
+            },
+
+            "Approve": function () {
+                Main.connection.send($pres({to: Main.pending_subscriber, "type": "subscribed"}));
+                Main.connection.send($pres({to: Main.pending_subscriber, "type": "subscribe"}));
+                Main.pending_subscriber = null;
+                $(this).dialog('close');
+            }
+        }
+    });
 	/*$('#send').click(function(){
 		text = $("textarea[name='userchat']").val();
 		$("#chatcontact").append("<div class=\"chat\">" + text + "</div>");
