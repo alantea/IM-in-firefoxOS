@@ -88,7 +88,7 @@ $(document).ready(function(){
 		Login.start();
 	});
 
-	$('#contactlist').on("click", ".roster-jid", function() {
+	$('#friendlist').on("click", ".friend", function() {
 		//alert('haha');
 		Main.talk_to = $(this).text();
 		Chat.start();	
