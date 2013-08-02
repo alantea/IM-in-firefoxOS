@@ -34,6 +34,7 @@ var Login = {
 			Main.jid = $('#login_name').get(0).value;
 			Main.connection.send($pres().tree());
 			Roster.start();
+			Main.connection.addHandler(Roster.onPresence, null, "presence");
 			$('#friendpage').attr('aria-hidden', 'false');
    			$('#loginpage').attr('aria-hidden', 'true');
 		}

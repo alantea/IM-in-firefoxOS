@@ -97,7 +97,8 @@ $(document).ready(function(){
 	$('#friendlist').on("click", ".friend", function() {
 		//alert('haha');
 		Main.talk_to = $(this).text();
-		Chat.start();	
+		Chat.start();
+		$('#chatcontact').empty();
 		$('#chatpage header h1').text(Main.talk_to);
 		$('#chatpage').attr('aria-hidden', 'false');
 		$('#friendpage').attr('aria-hidden', 'true');
@@ -113,26 +114,35 @@ $(document).ready(function(){
     	$('#mainpage').attr('aria-hidden', 'false');
   	});
 
-  $('#approve_dialog').dialog({
-        autoOpen: false,
-        draggable: false,
-        modal: true,
-        title: 'Subscription Request',
-        buttons: {
-            "Deny": function () {
-                Main.connection.send($pres({to: Main.pending_subscriber, "type": "unsubscribed"}));
-                Main.pending_subscriber = null;
-                $(this).dialog('close');
-            },
+	$('#add').click(function() {
 
-            "Approve": function () {
-                Main.connection.send($pres({to: Main.pending_subscriber, "type": "subscribed"}));
-                Main.connection.send($pres({to: Main.pending_subscriber, "type": "subscribe"}));
-                Main.pending_subscriber = null;
-                $(this).dialog('close');
-            }
-        }
-    });
+		var jid = $('#add_name').val();
+		var iq = $iq({type: "set"}).c("query", {xmlns: "jabber:iq:roster"}).c("item", jid);
+    	Main.connection.sendIQ(iq);
+    
+    	var subscribe = $pres({to: jid, "type": "subscribe"});
+   		Main.connection.send(subscribe);
+		alert('Invitation has been sent.');
+	});
+
+	$('#approve').click(function() {
+		$('form[name="approve_dialog"]').addClass("hidden");
+		Main.connection.send($pres({to: Main.pending_subscriber, "type": "subscribed"}));
+        Main.connection.send($pres({to: Main.pending_subscriber, "type": "subscribe"}));
+       	var jid = Strophe.getBareJidFromJid(Main.pending_subscriber);
+        var contact = $("<li id='" + jid + "'>" +
+                        "<div class='friend'>" + jid + "</div>" +
+                        "</li>");
+		Roster.insertContact(contact);
+
+        Main.pending_subscriber = null;
+	});
+
+	$('#deny').click(function() {
+		Main.connection.send($pres({to: Main.pending_subscriber, "type": "unsubscribed"}));
+        Main.pending_subscriber = null;
+		$('form[name="approve_dialog"]').addClass("hidden");
+	});
 	/*$('#send').click(function(){
 		text = $("textarea[name='userchat']").val();
 		$("#chatcontact").append("<div class=\"chat\">" + text + "</div>");

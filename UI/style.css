@@ -200,3 +200,7 @@ form[role="search"] p input + button[type="reset"]{
   0% { transform: translateX(0%); }
   100% { transform: translateX(-100%); }
 }
+
+.hidden {
+	display: none;
+}

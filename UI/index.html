@@ -29,7 +29,17 @@
         <script src="./js/strophe_roster.js"></script>
 	</head>
 	<body>
-		<section role="region" id="loginpage" aria-hidden="true">
+        <form name="approve_dialog" role="dialog" data-type="confirm" class="hidden">
+            <section>
+                <p><span id='approve-jid'></span> has requested a subscription
+                to your presence.  Approve or deny?</p>
+            </section>
+            <menu>
+                <button class="recommend" id="approve">Approve</button>
+                <button id="deny">Deny</button>
+            </menu>
+        </form>
+		<section role="region" id="loginpage" aria-hidden="false">
 			<header>
 				<a href="#"><span class="icon icon-user">user</span></a>
 				<menu type="toolbar">
@@ -89,7 +99,7 @@
 			<div id="reg_now"></div>
 		</section>
 
-		<section role="region" id="friendpage" aria-hidden="false">
+		<section role="region" id="friendpage" aria-hidden="true">
 			<header>
 				<a href="#"><span class="icon icon-back" id="friend_back">back</span></a>
 				<menu type="toolbar">
@@ -198,11 +208,5 @@
 					</div>
 				</div>
         </section>
-        <div id='approve_dialog'>
-            <p>
-                <span id='approve-jid'></span> has requested a subscription
-                to your presence.  Approve or deny?
-            </p>
-        </div>
 	</body>
 </html>

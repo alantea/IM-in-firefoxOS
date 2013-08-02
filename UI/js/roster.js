@@ -1,6 +1,5 @@
 var Roster = {
 	start: function() {
-		Main.connection.addHandler(Roster.onPresence, null, "presence");
 		Main.connection.roster.init(Main.connection);			// 初始化 roster 連線
 		Main.connection.roster.get(Roster.getContact); 			// 取得 roster
 		$('#friendlist ul').empty();
@@ -29,10 +28,9 @@ var Roster = {
         if (ptype === 'subscribe') {
         	Main.pending_subscriber = from;
         	$('#approve-jid').text(Strophe.getBareJidFromJid(from));
-            $('#approve_dialog').dialog('open');
+            $('form[name="approve_dialog"]').removeClass("hidden");
         }
-        else if (ptype !== 'error') {
 
-        }
+        return true;
 	}
 };
