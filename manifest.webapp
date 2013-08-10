@@ -4,9 +4,9 @@
   "description": "Awesome todo app by iFadey",
   "launch_path": "/index.html",
   "icons": {
-    "16": "/tmpicon.png",
-    "48": "/tmpicon.png",
-    "128": "/tmpicon.png"
+    "16": "img/tmpicon.png",
+    "48": "img/tmpicon.png",
+    "128": "img/tmpicon.png"
   },
   "developer": {
     "name": "Fawad Hassan",
